@@ -1,0 +1,267 @@
+import { DecorationItem, SampleImage, StickerState } from '../types/sticker';
+
+export const SAMPLE_IMAGES: SampleImage[] = [
+  {
+    id: 'shiba',
+    title: 'Happy Shiba Inu',
+    category: 'Pets',
+    thumbnail: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=200&auto=format&fit=crop&q=80',
+    url: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=800&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'cat',
+    title: 'Curious Kitten',
+    category: 'Pets',
+    thumbnail: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&auto=format&fit=crop&q=80',
+    url: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'burger',
+    title: 'Gourmet Burger',
+    category: 'Food',
+    thumbnail: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&auto=format&fit=crop&q=80',
+    url: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'sneaker',
+    title: 'Retro High Sneaker',
+    category: 'Objects',
+    thumbnail: 'https://images.unsplash.com/photo-1552346154-21d32810aba3?w=200&auto=format&fit=crop&q=80',
+    url: 'https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'avocado',
+    title: 'Fresh Avocado',
+    category: 'Food',
+    thumbnail: 'https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=200&auto=format&fit=crop&q=80',
+    url: 'https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=800&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'camera',
+    title: 'Vintage Film Camera',
+    category: 'Objects',
+    thumbnail: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=200&auto=format&fit=crop&q=80',
+    url: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&auto=format&fit=crop&q=80',
+  },
+];
+
+export const DECORATIONS: DecorationItem[] = [
+  // Sparkles & FX
+  { id: 'sparkle-1', name: 'Sparkles', category: 'sparkles', emoji: '✨', preview: '✨' },
+  { id: 'sparkle-2', name: 'Glowing Star', category: 'sparkles', emoji: '🌟', preview: '🌟' },
+  { id: 'fire', name: 'Fire Flame', category: 'sparkles', emoji: '🔥', preview: '🔥' },
+  { id: 'zap', name: 'Lightning', category: 'sparkles', emoji: '⚡', preview: '⚡' },
+  { id: 'heart-sparkle', name: 'Heart Sparkle', category: 'sparkles', emoji: '💖', preview: '💖' },
+  
+  // Badges & Stamps
+  { id: 'badge-100', name: '100% Top', category: 'badges', emoji: '💯', preview: '💯' },
+  { id: 'badge-cool', name: 'COOL Stamp', category: 'badges', emoji: '🆒', preview: '🆒' },
+  { id: 'badge-crown', name: 'Gold Crown', category: 'badges', emoji: '👑', preview: '👑' },
+  { id: 'badge-gem', name: 'Diamond Gem', category: 'badges', emoji: '💎', preview: '💎' },
+  { id: 'badge-boom', name: 'Boom Starburst', category: 'badges', emoji: '💥', preview: '💥' },
+  { id: 'badge-ok', name: 'OK Sign', category: 'badges', emoji: '👌', preview: '👌' },
+  
+  // Accessories & Costumes
+  { id: 'acc-sunglasses', name: 'Cool Shades', category: 'faces', emoji: '🕶️', preview: '🕶️' },
+  { id: 'acc-halo', name: 'Angel Halo', category: 'faces', emoji: '😇', preview: '😇' },
+  { id: 'acc-devil', name: 'Devil Horns', category: 'faces', emoji: '😈', preview: '😈' },
+  { id: 'acc-party', name: 'Party Horn', category: 'faces', emoji: '🥳', preview: '🥳' },
+  { id: 'acc-mask', name: 'Retro Disguise', category: 'faces', emoji: '🥸', preview: '🥸' },
+  { id: 'acc-cap', name: 'Billed Cap', category: 'faces', emoji: '🧢', preview: '🧢' },
+  
+  // Bubbles & Cute
+  { id: 'cute-cat', name: 'Cute Kitty', category: 'cute', emoji: '🐱', preview: '🐱' },
+  { id: 'cute-heart', name: 'Pink Heart', category: 'cute', emoji: '🩷', preview: '🩷' },
+  { id: 'cute-rainbow', name: 'Rainbow', category: 'cute', emoji: '🌈', preview: '🌈' },
+  { id: 'cute-flower', name: 'Sunflower', category: 'cute', emoji: '🌻', preview: '🌻' },
+  { id: 'bubble-speech', name: 'Speech Bubble', category: 'bubbles', emoji: '💬', preview: '💬' },
+  { id: 'bubble-thought', name: 'Thought Bubble', category: 'bubbles', emoji: '💭', preview: '💭' },
+];
+
+export interface StylePreset {
+  id: string;
+  name: string;
+  description: string;
+  colorPreview: string;
+  border: StickerState['border'];
+  shadow: StickerState['shadow'];
+  finish: StickerState['finish'];
+  finishIntensity: number;
+}
+
+export const STYLE_PRESETS: StylePreset[] = [
+  {
+    id: 'classic-diecut',
+    name: 'Classic White Die-Cut',
+    description: 'Crisp 18px white vinyl border with soft realistic shadow',
+    colorPreview: 'bg-white border-2 border-slate-300',
+    border: {
+      enabled: true,
+      width: 18,
+      color: '#ffffff',
+      smoothing: 10,
+      secondaryEnabled: false,
+      secondaryWidth: 6,
+      secondaryColor: '#1e293b',
+      dashed: false,
+      glow: false,
+      glowColor: '#ffffff',
+      glowBlur: 15,
+    },
+    shadow: {
+      enabled: true,
+      offsetX: 4,
+      offsetY: 8,
+      blur: 16,
+      color: '#000000',
+      opacity: 35,
+    },
+    finish: 'gloss',
+    finishIntensity: 75,
+  },
+  {
+    id: 'holographic-prism',
+    name: 'Holographic Rainbow',
+    description: 'Shiny iridescent prism finish with silver die-cut outline',
+    colorPreview: 'bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-500',
+    border: {
+      enabled: true,
+      width: 16,
+      color: '#f1f5f9',
+      smoothing: 8,
+      secondaryEnabled: true,
+      secondaryWidth: 4,
+      secondaryColor: '#c084fc',
+      dashed: false,
+      glow: true,
+      glowColor: '#ec4899',
+      glowBlur: 20,
+    },
+    shadow: {
+      enabled: true,
+      offsetX: 6,
+      offsetY: 10,
+      blur: 20,
+      color: '#7c3aed',
+      opacity: 40,
+    },
+    finish: 'holographic',
+    finishIntensity: 85,
+  },
+  {
+    id: 'neon-cyberpunk',
+    name: 'Cyber Neon Glow',
+    description: 'Electric cyan and magenta border with vibrant glow',
+    colorPreview: 'bg-cyan-400 shadow-lg shadow-cyan-500/50',
+    border: {
+      enabled: true,
+      width: 14,
+      color: '#06b6d4',
+      smoothing: 12,
+      secondaryEnabled: true,
+      secondaryWidth: 6,
+      secondaryColor: '#f43f5e',
+      dashed: false,
+      glow: true,
+      glowColor: '#00ffff',
+      glowBlur: 25,
+    },
+    shadow: {
+      enabled: true,
+      offsetX: 0,
+      offsetY: 6,
+      blur: 24,
+      color: '#06b6d4',
+      opacity: 50,
+    },
+    finish: 'none',
+    finishIntensity: 0,
+  },
+  {
+    id: 'retro-comic',
+    name: 'Retro Pop Art',
+    description: 'Bold black contour, yellow outline and comic halftone dots',
+    colorPreview: 'bg-yellow-300 border-2 border-black',
+    border: {
+      enabled: true,
+      width: 12,
+      color: '#facc15',
+      smoothing: 4,
+      secondaryEnabled: true,
+      secondaryWidth: 8,
+      secondaryColor: '#000000',
+      dashed: false,
+      glow: false,
+      glowColor: '#000000',
+      glowBlur: 0,
+    },
+    shadow: {
+      enabled: true,
+      offsetX: 8,
+      offsetY: 8,
+      blur: 0,
+      color: '#000000',
+      opacity: 90,
+    },
+    finish: 'retro-dots',
+    finishIntensity: 80,
+  },
+  {
+    id: 'glitter-glam',
+    name: 'Glitter Glam',
+    description: 'Gold die-cut border with sparkling glitter texture',
+    colorPreview: 'bg-amber-300',
+    border: {
+      enabled: true,
+      width: 16,
+      color: '#fbbf24',
+      smoothing: 10,
+      secondaryEnabled: true,
+      secondaryWidth: 4,
+      secondaryColor: '#ffffff',
+      dashed: false,
+      glow: true,
+      glowColor: '#f59e0b',
+      glowBlur: 16,
+    },
+    shadow: {
+      enabled: true,
+      offsetX: 5,
+      offsetY: 8,
+      blur: 18,
+      color: '#b45309',
+      opacity: 35,
+    },
+    finish: 'glitter',
+    finishIntensity: 90,
+  },
+  {
+    id: 'cricut-cutline',
+    name: 'Print & Cut Dashed',
+    description: 'Official cutline guide with scissor dash marks',
+    colorPreview: 'border-2 border-dashed border-red-500 bg-white',
+    border: {
+      enabled: true,
+      width: 14,
+      color: '#ffffff',
+      smoothing: 8,
+      secondaryEnabled: true,
+      secondaryWidth: 2,
+      secondaryColor: '#ef4444',
+      dashed: true,
+      glow: false,
+      glowColor: '#000000',
+      glowBlur: 0,
+    },
+    shadow: {
+      enabled: false,
+      offsetX: 0,
+      offsetY: 0,
+      blur: 0,
+      color: '#000000',
+      opacity: 0,
+    },
+    finish: 'none',
+    finishIntensity: 0,
+  },
+];
